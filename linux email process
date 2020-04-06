@@ -6,6 +6,7 @@ perl -lne 'print $1 if /([^,@"]+@[^,@"]+)/' *.csv > OUTPUT_FILE
 tr A-Z a-z < YOUR_FILE > OUTPUT_FILE
 
 // removes duplicates, leaving at least 1 of each
+// this option may do the same thing as the Perl process mentioned above. untested.
 grep -o '[[:alnum:]+\.\_\-]*@[[:alnum:]+\.\_\-]*' YOUR_FILE | sort | uniq > OUTPUT_FILE
 
 -------------------------------
