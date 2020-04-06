@@ -1,0 +1,14 @@
+// extract all email addresses from a file using Perl from any field.
+perl -lne 'print $1 if /([^,@"]+@[^,@"]+)/' *.csv > alltheemails.txt
+
+// converts everything within YOUR_FILE to lowercase and outputs a file.
+tr A-Z a-z < YOUR_FILE > OUTPUT_FILE
+
+// removes duplicates, leaving at least 1 of each
+grep -o '[[:alnum:]+\.\_\-]*@[[:alnum:]+\.\_\-]*' YOUR_FILE | sort | uniq > OUTPUT_FILE
+
+-------------------------------
+// optional
+
+// recongize all email addresses within that file, then sort them, then output anything solely unique
+grep -o '[[:alnum:]+\.\_\-]*@[[:alnum:]+\.\_\-]*' YOUR_FILE | sort | uniq -u > OUTPUT_FILE
