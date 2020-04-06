@@ -1,4 +1,4 @@
-// extract all email addresses from a file using Perl from any field.
+// extract all email addresses from a file in any field using Perl.
 perl -lne 'print $1 if /([^,@"]+@[^,@"]+)/' *.csv > alltheemails.txt
 
 // converts everything within YOUR_FILE to lowercase and outputs a file.
