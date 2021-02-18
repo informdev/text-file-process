@@ -5,14 +5,14 @@ perl -lne 'print $1 if /([^,@"]+@[^,@"]+)/' *.csv > OUTPUT_FILE
 awk '{if (match($0, /[^,@"]+@[^,@"]+/, m)) print m[0]}' *.csv > OUTPUT_FILE
 
 // converts everything within YOUR_FILE to lowercase and outputs a file.
-tr A-Z a-z < YOUR_FILE > OUTPUT_FILE
+tr A-Z a-z < OUTPUT_FILE > OUTPUT_FILE-merged
 
 // removes duplicates, leaving at least 1 of each
 // this option may do the same thing as the Perl process mentioned above. untested.
-grep -o '[[:alnum:]+\.\_\-]*@[[:alnum:]+\.\_\-]*' YOUR_FILE | sort | uniq > OUTPUT_FILE
+grep -o '[[:alnum:]+\.\_\-]*@[[:alnum:]+\.\_\-]*' OUTPUT_FILE-merged | sort | uniq > OUTPUT_FILE-deduped
 
 -------------------------------
 // optional
 
 // recongize all email addresses within that file, then sort them, then output anything solely unique
-grep -o '[[:alnum:]+\.\_\-]*@[[:alnum:]+\.\_\-]*' YOUR_FILE | sort | uniq -u > OUTPUT_FILE
+grep -o '[[:alnum:]+\.\_\-]*@[[:alnum:]+\.\_\-]*' OUTPUT_FILE-merged | sort | uniq -u > OUTPUT_FILE-originals
