@@ -1,0 +1,13 @@
+// Yeah I know... this is basic stuff. Still, I want to save it here.
+
+// Exporting a database. Will prompt you for the DB password.
+mysqldump -u DBUSERNAME -p DBNAME > whatever.sql
+
+// Importing a database. Will prompt you for the DB password.
+mysql -u DBUSERNAME -p DBNAME < backup.sql
+
+------------------------------
+
+// Little different. Here "dbserver" (note the -h) is replacing "localhost" and we've specified a port (note the capital -P) just in case it's not the default one.
+// Will prompt you for the DB password.
+mysqldump -h dbserver -P 3306 -u DBUSERNAME -p DBNAME > wahtever.sql
