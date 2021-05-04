@@ -1,4 +1,4 @@
-// find files without desired path - file type to search for - replace original/old string with the new one you want
+// find files within desired path - file type to search for - replace original/old string with the new one you want
 find /path/with/desired/files -name \*.php -exec sed -i "s/original-string/new-string/g" {} \;
 
 // This can be used directly in files, such as SQL
