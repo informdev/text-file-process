@@ -1,4 +1,11 @@
-Some of my common WP CLI commands
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+chmod +x wp-cli.phar
+sudo mv wp-cli.phar /usr/local/bin/wp
+
+
+
+
+//Some of my common WP CLI commands
 
 // The WP Importer plugin sucks, especially for importing images. The CLI does a much better job of this
 wp import example.wordpress.2016-06-21.xml --authors=create
