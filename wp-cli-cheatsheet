@@ -1,0 +1,32 @@
+Some of my common WP CLI commands
+
+// The WP Importer plugin sucks, especially for importing images. The CLI does a much better job of this
+wp import example.wordpress.2016-06-21.xml --authors=create
+
+// Optimize or repair the database without the need of SSH or PHPMYADMIN
+wp db optimize
+wp db repair
+
+// Export the database, again without the need of SSH or PHPMYADMIN
+wp db export
+or
+wp db export yourname.sql
+
+// Clean up post revisions
+wp package install trepmal/wp-revisions-cli
+wp revisions clean
+
+// Remove spam comments - sometimes I go a long time without checking this in the dashboard, CLI does a much faster job at clearing it out
+wp comment delete $(wp comment list – status=spam – format=ids)
+
+// --all updates all updateable plugins.
+wp plugin update --all
+
+// Pretty sweet feature. Plugins that do the same thing may have more options but this sucker works!
+wp media regenerate
+
+// Make sure your core files are in tact
+wp checksum core
+
+// searches for and replaces strings in the database
+wp search-replace
